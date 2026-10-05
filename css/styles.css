@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+header {
+  position: sticky;
+  top: 0;  
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
