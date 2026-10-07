@@ -10,4 +10,5 @@ Starter structure for a simple, framework-neutral products showcase.
 - `assets/images/` — product and promotional images.
 - `assets/icons/` — icon assets.
 
-No application code or product content has been added yet.
+## Colours
+![colour palette](./assets/images/mydrugs-colours.jfif)

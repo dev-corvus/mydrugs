@@ -51,9 +51,6 @@ a {
 
 /* LANDING PAGE */
 main {
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   background-color: var(--dark);
 }
 
@@ -103,9 +100,47 @@ q {
 
 p {
   margin-bottom: 15px;
+  padding: 10px;
 }
+
 
 h1, h2, h3 {
   margin-bottom: 20px;
+  padding: 10px;
+  color: var(--offwhite);
 }
 
+/* CONTACT */
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--offwhite);
+  border-radius: 5px;
+  background-color: var(--dark);
+  color: var(--offwhite);
+}
+
+button {
+  padding: 10px;
+  background-color: var(--blue);
+  color: var(--offwhite);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
