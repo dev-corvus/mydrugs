@@ -44,6 +44,11 @@ a {
   font-size: 16px;
 }
 
+.hyperlink {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
 .logo {
   width: 30px;
   height: auto;
@@ -70,7 +75,6 @@ body {
 .landing-image {
   max-width: 30%;
   height: auto;
-  border-radius: 10px;
 }
 
 .shop-button {
@@ -81,6 +85,29 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
+}
+
+/* SHOP */
+
+/* FAQ */
+section.faq-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+details {
+  border: 1px solid var(--offwhite);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+details summary {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
 }
 
 /* SAFETY */
@@ -144,3 +171,4 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
