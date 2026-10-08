@@ -8,15 +8,15 @@
 
 :root {
   /* Brand Core */
-  --dark: #1a1a1a;      /* Deep dark charcoal/black from the backdrop */
-  --offwhite: #FAF9F6;      /* High-contrast distressed white from the logo */
+  --color-bg: #1a1a1a;      /* Deep dark charcoal/black from the backdrop */
+  --color-txt: #FAF9F6;      /* High-contrast distressed white from the logo */
 
   /* The Explosion Palette */
   --color-red: #ea4535;     /* Warm coral red (top right dust & pill) */
-  --orange: #f48a1c;  /* Vibrant orange (right-side burst) */
-  --yellow: #f8db27;  /* Electric/golden yellow (bottom-right glow) */
-  --green: #90cb39;   /* Fresh spring/lime green (upper left) */
-  --blue: #00addc;    /* Vivid sky/electric blue (bottom left scatters) */
+  --color-orange: #f48a1c;  /* Vibrant orange (right-side burst) */
+  --color-yellow: #f8db27;  /* Electric/golden yellow (bottom-right glow) */
+  --color-green: #90cb39;   /* Fresh spring/lime green (upper left) */
+  --color-blue: #00addc;    /* Vivid sky/electric blue (bottom left scatters) */
 }
 
 /* ========================================== */
@@ -45,7 +45,7 @@ a {
 }
 
 .hyperlink {
-  color: var(--blue);
+  color: var(--color-blue);
   text-decoration: underline;
 }
 
@@ -56,18 +56,17 @@ a {
 
 /* LANDING PAGE */
 main {
-  background-color: var(--dark);
+  background-color: var(--color-bg);
 }
 
 body {
-  background-color: var(--dark);
+  background-color: var(--color-bg);
 }
 
 .landing-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 20px;
   gap: 20px;
 }
@@ -79,7 +78,7 @@ body {
 
 .shop-button {
   padding: 10px 20px;
-  background-color: var(--orange);
+  background-color: var(--color-orange);
   color: white;
   border: none;
   border-radius: 5px;
@@ -88,23 +87,69 @@ body {
 }
 
 /* SHOP */
+.shop-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.products {
+  max-width: 200px;
+  border: 1px solid var(--color-txt);
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+
+.pill {
+  height: 100%;
+}
+
+.pill-name {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#purple-pill:hover {
+  color: #8E24C7;
+}
+
+#red-pill:hover {
+  color: var(--color-red);
+}
+
+#blue-pill:hover {
+  color: var(--color-blue);
+  cursor: ;
+}
+
+#green-pill:hover {
+  color: var(--color-green);
+}
 
 /* FAQ */
-section.faq-container {
+.faq-container {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
 details {
-  border: 1px solid var(--offwhite);
+  border: 1px solid var(--color-txt);
   border-radius: 5px;
   margin-bottom: 20px;
   overflow: hidden;
 }
 
 details summary {
-  padding: 1rem;
+  padding: 20px;
   cursor: pointer;
   font-weight: bold;
   list-style: none;
@@ -115,13 +160,13 @@ details summary {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  border: 1px solid var(--offwhite);
+  border: 1px solid var(--color-txt);
   border-radius: 10px;
 }
 
 q {
   font-style: italic;
-  color: var(--offwhite);
+  color: var(--color-txt);
   font-size: 12px;
 }
 
@@ -134,7 +179,7 @@ p {
 h1, h2, h3 {
   margin-bottom: 20px;
   padding: 10px;
-  color: var(--offwhite);
+  color: var(--color-txt);
 }
 
 /* CONTACT */
@@ -151,22 +196,22 @@ h1, h2, h3 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
 }
 
 input, textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--offwhite);
+  border: 1px solid var(--color-txt);
   border-radius: 5px;
-  background-color: var(--dark);
-  color: var(--offwhite);
+  background-color: var(--color-bg);
+  color: var(--color-txt);
 }
 
 button {
   padding: 10px;
-  background-color: var(--blue);
-  color: var(--offwhite);
+  background-color: var(--color-blue);
+  color: var(--color-txt);
   border: none;
   border-radius: 5px;
   cursor: pointer;
