@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyDrugs - Contact</title>
-    
+
     <link rel="icon" href="./assets/icons/mydrugs-favicon.ico">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -22,21 +22,55 @@
     </header>
     <main>
         <section class="contact-container">
-            <div class="contact-section">
-                <h1>Contact Us</h1>
-                <p>If you have any questions or concerns, feel free to reach out to us!</p>
-            </div>
+            <article class="first-contact">
+                <div class="contact-section">
+                    <h1>Contact Us</h1>
+                    <p>If you have any questions or concerns, feel free to reach out to us!</p>
+                </div>
 
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="XKira7gaming" required>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="XKira7gaming" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" placeholder="blablabla..." required></textarea>
+                    <label for="subject">Subject:</label>
+                    <textarea id="subject" name="subject" rows="1" placeholder="bla" required></textarea>
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>    
+                    <label for="topic-select">Choose a topic:</label>
+                    <select id="topic-select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="">Product</option>
+                        <option value="">Delivery</option>
+                        <option value="">Question</option>
+                        <option value="">Website</option>
+                    </select>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="blablabla..." required></textarea>
+                </form>
+            </article>
+
+            <article class="second-contact">
+                <div class="contact-section">
+                    <h1>Tell us who you really are</h1>
+                    <p>We will sell your data to third parties</p>
+                </div>
+
+                <form>
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="XKira7 gaming official" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type ="email" id="email" name="email" placeholder="kira7gaming@email.com" required>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cop" name="cop">
+                        <label for="cop">Are you a cop?</label>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </article>
+        </section> 
     </main>
 
     <footer>&copy; Build: v2.4.1-stable | Server Time: UTC 16:15:32 </footer>

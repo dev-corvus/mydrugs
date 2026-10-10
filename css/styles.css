@@ -108,9 +108,8 @@ nav img {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
   margin-top: var(--space);
-  padding: 10px 20px;
+  padding: 10px 80px;
 }
 
 /* Shared page width and spacing (based on FAQ) */
@@ -203,7 +202,6 @@ details p {
 }
 
 .safety-container p:first-of-type {
-  font-style: italic;
   margin-bottom: var(--space);
 }
 
@@ -226,7 +224,6 @@ details p {
   border: 1px solid var(--color-txt);
   border-radius: 5px;
   display: block;
-  font-style: italic;
   margin-top: var(--space);
   padding: 10px;
 }
@@ -242,15 +239,27 @@ iframe {
 
 /* CONTACT */
 .contact-container {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  justify-content: center;
+}
+
+.first-contact,
+.second-contact {
   align-items: center;
   display: flex;
   gap: var(--space);
-  justify-content: center;
 }
 
 .contact-section,
 form {
   flex: 1;
+}
+
+.contact-section {
+  margin-bottom: 0;
 }
 
 form {
@@ -260,12 +269,8 @@ form {
   width: 100%;
 }
 
-label {
-  margin-bottom: 10px;
-}
-
 input,
-textarea {
+textarea, select {
   background-color: var(--color-bg);
   border: 1px solid var(--color-txt);
   border-radius: 5px;
@@ -273,6 +278,44 @@ textarea {
   margin-bottom: var(--space);
   padding: 10px;
   width: 100%;
+  cursor: pointer;
+}
+
+label, button {
+  font-weight: bold;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox-group label {
+  cursor: pointer;
+}
+
+select {
+  appearance: none; /* allows styling <option> */
+  padding: 10px;
+}
+
+
+select option {
+  background-color: var(--color-orange);
+}
+
+/* 3. Style the hovered/focused option */
+select option:hover {
+  background-color: var(--color-blue);
 }
 
 button {
@@ -300,7 +343,9 @@ footer {
   }
 
   .contact-container,
-  .story-section {
+  .story-section,
+  .first-contact,
+  .second-contact {
     align-items: stretch;
     flex-direction: column;
   }
