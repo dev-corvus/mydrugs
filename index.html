@@ -12,11 +12,14 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="mobile-menu-nav">
+            <a href="index.html" class="mobile-logo" aria-label="MyDrugs home">
+                <img src="./assets/icons/mydrugs-logo-nobg.png" alt="">
+            </a>
             <ul id="menu" class="menu">
                 <li><a href="shop.html">SHOP</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li>
+                <li class="desktop-logo">
                     <a href="index.html" class="logo">
                         <img src="./assets/icons/mydrugs-logo-nobg.png" alt="MyDrugs Logo">
                     </a>
@@ -25,7 +28,7 @@
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
 
-            <button type="button" id="menu-toggle" aria-label="open menu" aria-expanded="false" aria-controls="menu">
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="open menu" aria-expanded="false" aria-controls="menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M21 5.5H3V7h18V5.5Zm0 5.75H3v1.5h18v-1.5ZM3 17h18v1.5H3V17Z" fill="currentColor" />
@@ -38,9 +41,34 @@
             <img class="landing-image" src="./assets/images/mydrugs-landing-page.jpg" alt="MyDrugs Landing Page">
             <button class="shop-button"><a href="shop.html">SHOP NOW</a></button>
         </section>
+
+        <dialog id="modal-sub" class="modal">
+            <button type="button" class="modal-close" aria-label="close modal">
+                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                        d="m20.28 4.78-1.06-1.06L12 10.94 4.78 3.72 3.72 4.78 10.94 12l-7.22 7.22 1.06 1.06L12 13.06l7.22 7.22 1.06-1.06L13.06 12l7.22-7.22Z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+
+            <div class="modal-content">
+                <span class="modal-tag"> NEWSLETTER </span>
+                <h2> sign up to our newsletter! </h2>
+
+                    <form id="form-sub" class="form-sub">
+                        <label for="email"> email </label>
+                        <input type="text" id="email" name="email" required>
+                        <button type="submit"> sign me up! </button>
+                    </form>
+
+                    <span class="modal-footer"> no spam, we promisse! </span>
+            </div>
+        </dialog>
+
     </main>
 
     <footer>&copy; Build: v2.4.1-stable | Server Time: UTC 16:15:32 </footer>
+
     <script src="main.js"></script>
 </body>
 

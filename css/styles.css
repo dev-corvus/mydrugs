@@ -53,6 +53,7 @@ h3 {
 
 /* NAVBAR */
 header {
+  width: 100%;
   background-color: black;
   font-size: 16px;
   font-weight: bold;
@@ -68,8 +69,27 @@ nav {
   margin: 0 auto;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+
+  position: relative;
+}
+
+.mobile-menu-nav {
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5rem;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-logo img {
+  height: 4rem;
+  object-fit: contain;
+  padding: 1rem 0.5rem;
+  width: 6rem;
 }
 
 .logo img {
@@ -96,38 +116,61 @@ nav button {
   height: 5rem;
 }
 
-.menu.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
+nav ul {
+  gap: 1rem;
+  align-items: center;
 }
 
 .menu {
+  align-items: center;
+  background-color: black;
   display: flex;
   flex-direction: column;
-  gap: 1 rem;
+  gap: 1rem;
+  justify-content: center;
+  padding: 5rem 1.5rem 2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15rem;
 
-  width: 100%;
-  position: relative;
-
-  top: calc(100% + 1 rem);
-  padding: 1.5rem;
+  border-radius: 0 5px;
 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   z-index: 100;
+
+  transform: translateX(100%);
+  transition: opacity 150ms ease-in, visibility 150ms ease-in, transform 150ms ease-in;
+}
+
+.desktop-logo {
+  display: none;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.mobile-menu-nav button {
+  position: relative;
+  z-index: 101;
 }
 
 .menu a {
+  margin-top: 1rem;
   display: block;
   padding: 0.5rem;
   border-radius: 5px;
 }
 
 .menu a:hover {
-  background-color: var(--color-orange);
+  color: var(--color-orange);
+  text-decoration: underline;
 }
 
 .hyperlink {
@@ -153,14 +196,109 @@ nav button {
 }
 
 .shop-button {
-  background-color: var(--color-orange);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: var(--space);
-  padding: 10px 80px;
+  padding: 10px 85px;
 }
+
+/* MODAL */
+.modal {
+  width: min(98%, 28rem);
+  margin: auto;
+
+  background-color: black;
+  color: var(--color-bg);
+
+  border: 0;
+  border-radius: 5px;
+
+  overflow: visible;
+
+  box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 0.35);
+}
+
+/* _________________________________________ */
+
+.modal h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  opacity: 85;
+}
+
+.modal-tag {
+  background-color: var(--color-green);
+  border-radius: 2rem;
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.modal::backdrop {
+  /* pseudo elements in css, inserts content in the screen but it doesn't exist in html */
+  background-color: 0 1.5rem 5rem rgb(0 0 0 / 0.35);
+  backdrop-filter: blur(0.75rem);
+}
+
+.modal[open] {
+  animation: modal-open 300ms ease-in forwards;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  /* space between right and left but the x is in the right */
+
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  /* round x close button */
+
+  cursor: pointer;
+  color: var(--color-txt);
+  background-color: transparent;
+}
+
+.modal-content {
+  padding: 2rem;
+}
+
+.modal-tag {
+  display: inline-block;
+
+  padding: 0.5rem 0.85rem;
+  margin-bottom: 1rem;
+
+  background-color: var(--color-green);
+  color: var(--color-txt);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.form-sub input:focus {
+  border-color: var(--color-green);
+}
+
+.modal-footer {
+  display: block;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
 
 /* Shared page width and spacing (based on FAQ) */
 .faq-container,
@@ -264,7 +402,7 @@ details p {
 }
 
 .story-text,
-.story-section > div {
+.story-section>div {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -320,7 +458,8 @@ form {
 }
 
 input,
-textarea, select {
+textarea,
+select {
   background-color: var(--color-bg);
   border: 1px solid var(--color-txt);
   border-radius: 5px;
@@ -331,7 +470,8 @@ textarea, select {
   cursor: pointer;
 }
 
-label, button {
+label,
+button {
   font-weight: bold;
 }
 
@@ -354,10 +494,10 @@ label, button {
 }
 
 select {
-  appearance: none; /* allows styling <option> */
+  appearance: none;
+  /* allows styling <option> */
   padding: 10px;
 }
-
 
 select option {
   background-color: var(--color-orange);
@@ -375,6 +515,12 @@ button {
   cursor: pointer;
   font-size: 16px;
   padding: 10px;
+
+  transition: all 300ms ease-in;
+}
+
+.shop-button:hover, .contact-button:hover {
+  background-color: var(--color-orange);
 }
 
 footer {
@@ -411,24 +557,6 @@ footer {
 }
 
 
-@media screen and (min-width: 48rem){
-  .menu {
-    position: static;
-    visibility: visible;
-    pointer-events: auto;
-    transform: none;
-    opacity: 1;
-    padding: 0;
-
-    flex-direction: row;
-    width: auto;
-  }
-
-  nav button {
-    display: none;
-  }
-}
-
 /* @media (max-width: 480px) {
   nav {
     gap: 8px;
@@ -449,3 +577,49 @@ footer {
     font-size: 1.75rem;
   }
 } */
+
+@keyframes modal-open {
+  from {
+    opacity: 0;
+    transform: translateY(2rem) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+
+  }
+}
+
+/* Responsividade */
+@media screen and (min-width: 48rem) {
+  .menu {
+    height: auto;
+    opacity: 1;
+    padding: 0;
+    pointer-events: auto;
+    position: static;
+    transform: none;
+    visibility: visible;
+    width: auto;
+
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+  .desktop-logo {
+    display: list-item;
+  }
+
+  .mobile-menu-nav {
+    justify-content: center;
+  }
+
+  .mobile-logo {
+    display: none;
+  }
+
+  .mobile-menu-nav button {
+    display: none;
+  }
+}

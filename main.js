@@ -13,6 +13,7 @@ btnMenu.addEventListener("click", function () {
     listMenu.classList.toggle("active");
     
     const openMenu = listMenu.classList.contains("active");
+    btnMenu.setAttribute("aria-expanded", String(openMenu));
 
     if (openMenu) {
         btnMenu.setAttribute("aria-label", "close menu");
@@ -33,3 +34,9 @@ breakpoint.addEventListener("change", function (event){  // store the action tha
         btnMenu.setAttribute("aria-expanded", "false");
     }
 })
+
+// MODAL
+const modal = document.querySelector("#modal-sub");
+
+// modal.showModal(); // resource for modals
+
