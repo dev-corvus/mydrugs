@@ -37,6 +37,14 @@ breakpoint.addEventListener("change", function (event){  // store the action tha
 
 // MODAL
 const modal = document.querySelector("#modal-sub");
+const btnClose = document.querySelector("#modal-close");
 
-// modal.showModal(); // resource for modals
+modal.showModal(); // resource for modals
 
+btnClose.addEventListener("click", function (){
+    modal.close();
+})
+
+// close modal after clicking outside
+
+// open modal after 6s after loading the page

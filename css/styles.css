@@ -53,7 +53,6 @@ h3 {
 
 /* NAVBAR */
 header {
-  width: 100%;
   background-color: black;
   font-size: 16px;
   font-weight: bold;
@@ -65,13 +64,10 @@ header {
 }
 
 nav {
-  max-width: 75rem;
-  margin: 0 auto;
-
+  position: relative;
   display: flex;
   justify-content: center;
-
-  position: relative;
+  align-items: center;
 }
 
 .mobile-menu-nav {
@@ -98,7 +94,11 @@ nav {
   object-fit: contain;
   padding: 10px;
   width: 70px;
+
   color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 nav button {
@@ -118,7 +118,6 @@ nav button {
 
 nav ul {
   gap: 1rem;
-  align-items: center;
 }
 
 .menu {
@@ -594,17 +593,37 @@ footer {
 /* Responsividade */
 @media screen and (min-width: 48rem) {
   .menu {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 70px minmax(0, 1fr) minmax(0, 1fr);
     height: auto;
+    margin: 0 auto;
+    max-width: 56rem;
     opacity: 1;
     padding: 0;
     pointer-events: auto;
     position: static;
     transform: none;
     visibility: visible;
-    width: auto;
-
-    flex-direction: row;
+    width: 100%;
     background-color: transparent;
+    justify-items: center;
+  }
+
+  .menu a {
+    margin-top: 0;
+  }
+
+  .menu .logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .menu .logo img {
+    margin: 0;
+    position: static;
+    transform: none;
   }
 
   .desktop-logo {
